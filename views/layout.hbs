@@ -1,19 +1,87 @@
-<!DOCTYPE html>
 <html lang="en">
 
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>{{appTitle}}</title>
-      <link rel="stylesheet" href="/stylesheets/style.css" />
-   </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{appTitle}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-   <body>
+  <body>
+    <nav>
+      <img src="" alt="" />
+      <ul>
+        <li><img class="icons" src="/images/dashboard.svg" alt="" /><a href=""><i></i>Dashboard</a></li>
+        <li><img class="icons" src="/images/employees.svg" alt="" /><a href=""><i></i>Employes</a></li>
+        <li><img class="icons" src="/images/vehicle.svg" alt="" /><a href=""><i></i>Vehicles</a></li>
+        <li><img class="icons" src="/images/document.svg" alt="" /><a href=""><i></i>Ensurance</a></li>
+        <li><img class="icons" src="/images/time.svg" alt="" /><a href=""><i></i>Time managent</a></li>
+        <li><img class="icons" src="/images/team.svg" alt="" /><a href=""><i></i>Team management</a></li>
+        <li><img class="icons" src="/images/maps.svg" alt="" /><a href=""><i></i>Maps</a></li>
+      </ul>
+      <ul>
+        <li>
+          <img class="icons" src="/images/gear.svg" alt="" />
+          <a href="" class="logout">Logout </a></li>
+      </ul>
+    </nav>
 
-      {{{body}}}
+   <section>
+      <div>
+            <button>NEW</button>
+            <div>
+               <input type="search" name="" id="">
+               <button>HIDE</button>
+            </div>
+      </div>
+   
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Street</th>
+      <th>Vehicle</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Johnson</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+    </tr>
+  </table>
+   </section>
 
-      <script src="/js/script.js"></script>
-   </body>
+    {{{body}}}
+
+    <script src="/js/script.js"></script>
+  </body>
 
 </html>
