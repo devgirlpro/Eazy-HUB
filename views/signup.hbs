@@ -1,0 +1,32 @@
+<h1>Sign Up</h1>
+<form action="/signup" method="POST">
+
+	<label for="">Username: </label>
+	<input type="text" name="username">
+
+	<label for="">Password: </label>
+	<input type="password" name="password">
+
+    <label for="">Name: </label>
+    <input type="text" name="name">
+
+    <label for="">LastName: </label>
+    <input type="text" name="lastName">
+
+    <label for="">Street: </label>
+    <input type="text" name="street">
+
+     <label for="">Email: </label>
+    <input type="text" name="email">
+
+     <label for="">Phone: </label>
+    <input type="numbder" name="phone">
+   
+	
+
+
+        <button type="submit">Sign Up 🐵</button>
+	{{#if message}}
+		<h3>{{message}}</h3>
+	{{/if}}
+</form>
