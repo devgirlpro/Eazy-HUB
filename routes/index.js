@@ -1,5 +1,8 @@
 const router = require("express").Router();
 
+
+const User = require("../models/User");
+
 /* GET home page */
 router.get("/", (req, res, next) => {
   res.render("index");
@@ -13,15 +16,24 @@ router.get("/employee", (req, res, next) => {
 
 
 /* GET profile page */
-router.get("/profile", (req, res, next) => {
-  res.render("profile");
+router.get("/driver", (req, res, next) => {
+  res.render("driver");
 });
 
 
-/* GET drivertovehicle page */
-router.get("/driver-vehicle", (req, res, next) => {
-  res.render("driverVehicle");
+/* GET manager page */
+router.get("/manager", (req, res, next) => {
+  User.find()
+    .then(userData => {
+      res.render("manager", {userData})
+        // console.log(userData)
+    })
+    .catch(err => console.log(error))
+
+  // res.render("manager");
 });
+
+
 
 
 

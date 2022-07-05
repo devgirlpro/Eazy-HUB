@@ -39,7 +39,7 @@ router.post('/signup', (req, res, next) => {
 				// create the user
 				User.create({username, password: hash, name, lastName, street, email, phone})
 					.then(createdUser => {
-						console.log(createdUser)
+						// console.log(createdUser)
 						res.redirect('/login')
 					})
 					.catch(err => {
@@ -67,6 +67,9 @@ router.post('/login', (req, res, next) => {
 				res.render('login', { message: 'Invalid credentials' })
 				return
 			}
+			
+
+
 			// username is correct
 			// check the password from the form against the hash in the db
 			if (bcrypt.compareSync(password, userFromDB.password)) {
@@ -75,8 +78,15 @@ router.post('/login', (req, res, next) => {
 				req.session.username = userFromDB
 
                 // console.log(username)
-				res.redirect('/driver-vehicle');
+				// res.redirect('/driver-vehicle');	
 			}
+            if (username === "manager") {
+				res.redirect("/manager")
+			}else {
+				res.redirect("/driver")
+			}
+			
+		
 		})
 });
 
@@ -88,9 +98,9 @@ router.get("/employee", (req,res,next) => {
 })
 
 
-router.get("/profile", (req, res, next) => {
+router.get("/driver", (req, res, next) => {
     console.log("test signup")
-	res.render("profile");
+	res.render("driver");
 });
 
 

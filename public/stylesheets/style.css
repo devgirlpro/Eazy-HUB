@@ -1,31 +1,8 @@
 body {
-<<<<<<< HEAD
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: center;
-=======
-  font-family: 'Montserrat', sans-serif;
-  margin: 0px;
-  display: flex;
-}
-
-button {
-  width: 100px;
-  border: none;
-  height: 30px;
-}
-
-button:hover {
-  background-color: rgb(9, 203, 109);
-  transition: .5s;
-  border: 3px solid black;
-  font;
-}
-
-li, a {
-  cursor: pointer;
->>>>>>> dev2
 }
 
 a {
