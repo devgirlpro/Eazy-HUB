@@ -1,12 +1,24 @@
-<h1>{{appTitle}} 🚀</h1>
+<section class="index-section">
+	
+	
+	<img src="/images/car-logo.svg" alt="">
 
-<p>Welome to EAZY HUB ***</p>
-<p>TEST</p>
+    <div>
+		<button><a class="back-btn" href="/login">Login</a></button>
+        <button><a class="back-btn" href="/signup">Sign Up</a></button>
+	    
+    </div>
+	
+</section>
 
+<script>
+	
+	const nav = document.querySelectorAll('nav');
 
-<button><a href="/signup">SignUp</a></button>
-
-<button><a href="/login">Login</a></button>
-
-
-
+	function changeNav() {
+		return nav[0].style.visibility = 'hidden';
+	}
+	console.log('anything');
+	console.log(nav);
+	changeNav();
+</script>
