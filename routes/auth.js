@@ -9,8 +9,8 @@ router.get("/signup", (req, res, next) => {
 
 
 router.post('/signup', (req, res, next) => {
-	const { username, password } = req.body
-	console.log(username, password)
+	const {username, password, name, lastName, street, email, phone} = req.body
+	console.log("req.body =>", req.body)
 	// validation
 	if (password.length < 4) {
 		res.render('signup', { message: 'Password has to be 4 chars min' })
@@ -20,11 +20,9 @@ router.post('/signup', (req, res, next) => {
 	if (username === '') {
 		res.render('signup', { message: 'Username cannot be empty' })
 		return
-	}
-
-
-
-		// validation passed
+	}	
+	
+	// validation passed
 	// check if that username already exists 
 	User.findOne({ username: username })
 		.then(userFromDB => {
@@ -37,9 +35,9 @@ router.post('/signup', (req, res, next) => {
 				// we hash the password 
 				const salt = bcrypt.genSaltSync()
 				const hash = bcrypt.hashSync(password, salt)
-				console.log(hash)
+				// console.log(hash)
 				// create the user
-				User.create({ username: username, password: hash })
+				User.create({username, password: hash, name, lastName, street, email, phone})
 					.then(createdUser => {
 						console.log(createdUser)
 						res.redirect('/login')
@@ -55,12 +53,6 @@ router.post('/signup', (req, res, next) => {
 
 router.get("/login", (req, res, next) => {
 	res.render("login");
-});
-
-
-router.get("/profile", (req, res, next) => {
-    console.log("test signup")
-	res.render("profile");
 });
 
 
@@ -81,10 +73,29 @@ router.post('/login', (req, res, next) => {
 				// the password is correct -> the user can be logged in
 				// req.session is an obj that is provided by express-session
 				req.session.username = userFromDB
-				res.redirect('/profile');
+
+                // console.log(username)
+				res.redirect('/driver-vehicle');
 			}
 		})
 });
+
+
+
+
+router.get("/employee", (req,res,next) => {
+	res.render("employee");
+})
+
+
+router.get("/profile", (req, res, next) => {
+    console.log("test signup")
+	res.render("profile");
+});
+
+
+
+
 
 
 
