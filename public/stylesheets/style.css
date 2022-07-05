@@ -4,6 +4,19 @@ body {
   display: flex;
 }
 
+button {
+  width: 100px;
+  border: none;
+  height: 30px;
+}
+
+button:hover {
+  background-color: rgb(9, 203, 109);
+  transition: .5s;
+  border: 3px solid black;
+  font;
+}
+
 li, a {
   cursor: pointer;
 }
@@ -16,7 +29,11 @@ a {
 }
 
 img {
+}
+
+input {
   margin-right: 5px;
+  height: 30px;
 }
 
 h1 {
@@ -59,6 +76,7 @@ table {
 th, td {
   text-align: left;
   padding: 8px;
+  width: 130px;
 }
 
 section {
@@ -71,7 +89,47 @@ section {
 section div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
+}
+
+tbody {
+  background: red;
+  height: 500px;
+  width: 75vw;
+  overflow: scroll;
+  display: block;
+}
+
+.prominent {
+  background-color: #00b7ff;
+  width: 200px;
+}
+
+
+
+.secondary-btn {
+  background: none;
+  border-bottom: 2px solid blue;
+  padding: 0px;
+  width: auto;
+  height: fit-content;
+
+}
+
+.secondary-btn:hover
+{
+  font-weight: 600;
+  background: none;
+  border: none;
+  transition: 0s;
+  cursor: pointer;
+}
+
+.search-img {
+  width: 20px; 
+  background: grey; 
+  padding: 5px;
 }
 
 .icons {
