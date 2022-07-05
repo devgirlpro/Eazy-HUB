@@ -15,6 +15,12 @@ const hbs = require("hbs");
 
 const app = express();
 
+
+//require the bodyparser
+const bodyParser = require('body-parser');
+//let know your app you will using it
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
@@ -24,9 +30,42 @@ const projectName = "Eazy-HUB";
 
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
+
+
+// session configuration 
+
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
+
+app.use(
+	session({
+		secret: process.env.SESSION_SECRET,
+		cookie: { maxAge: 1000 * 60 * 60 * 24 },
+		resave: true,
+		saveUninitialized: true,
+		store: MongoStore.create({
+			mongoUrl: process.env.MONGODB_URL
+		})
+	})
+)
+
+// end of session configuration 
+
+
+
+
 // 👇 Start handling routes here
-const index = require("./routes/index.routes");
+const index = require("./routes");
 app.use("/", index);
+
+
+const auth = require("./routes/auth");
+app.use("/", auth);
+
+
+
+
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
