@@ -1,19 +1,50 @@
-<h1>Log In</h1>
-<form action="/login" method="POST">
-
-	<label for="">Name: </label>
-	<input type="text" name="username">
-
-	<label for="">Password: </label>
-	<input type="password" name="password">
-
-	<button type="submit">Log In 🐵</button>
 
 
-	 <button><a href="/">HomePage</a></button>
 
-	{{#if message}}
-		<h3>{{message}}</h3>
-	{{/if}}
-    
-</form>
+<section class="login-section">
+	<div class="login-div">
+		<a class="breadcrumb" href="/">Home / Login</a>
+	</div>
+	
+	<img src="/images/car-logo.svg" alt="">
+
+	<div class="login-div">
+		<a class="back-btn" href="/">Home</a>
+		<h1>Log In</h1>
+		<p>copywrite</p>
+	</div>
+	
+	<form action="/login" method="POST">
+
+		<label for="">Name: </label>
+		<input type="text" name="username" placeholder="username">
+
+		<label for="">Password: </label>
+		<input type="password" name="password" placeholder="password">
+
+		<div class="login-div">
+			<button type="submit" href="/login">Log In</button>
+			<a class="back-btn" href="/">Forgot password?</a>
+		</div>
+
+		
+
+		{{#if message}}
+			<h3>{{message}}</h3>
+		{{/if}}
+		
+	</form>
+</section>
+
+
+<script>
+	
+	const nav = document.querySelectorAll('nav');
+
+	function changeNav() {
+		return nav[0].style.visibility = 'hidden';
+	}
+	console.log('anything');
+	console.log(nav);
+	changeNav();
+</script>

@@ -8,12 +8,14 @@ button {
   width: 100px;
   border: none;
   height: 30px;
+  background-color: #00b7ff;
 }
 
 button:hover {
-  background-color: rgb(9, 203, 109);
-  transition: .5s;
-  border: 3px solid black;
+  background-color:#036992;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 li, a {
@@ -57,7 +59,7 @@ li:hover {
 nav {
   background-color: #00b7ff;
   height: 100vh;
-  width: 35vw;
+  width: 25vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -76,11 +78,64 @@ th, td {
   width: 130px;
 }
 
-section {
+.employee-section {
   padding: 20px;
-  width: 100%;
+  width: 75vw;
   height: 100%;
   background-color: aquamarine;
+}
+
+.login-section, .index-section {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.index-section div {
+  width: 30vw;
+  margin-top: 50px;
+}
+
+
+.login-section img, .index-section img {
+  width: 200px;
+}
+
+.login-section form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+}
+
+.login-div {
+  width: 40vw;
+}
+
+.login-section div {
+  margin-top: 20px;
+}
+
+.back-btn {
+  font-size: 10pt;
+  border-bottom: 1px solid blue;
+}
+
+.breadcrumb {
+  font-size: 8pt;
+}
+
+.back-btn, .breadcumb {
+  color: blue;
+}
+
+label {
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 section div {
