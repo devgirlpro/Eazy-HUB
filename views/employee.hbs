@@ -14,165 +14,41 @@
 <div style="overflow-x:auto;">
   <table>
     <tr>
-      <th>ID</th>
       <th>Username</th>
       <th>Name</th>
       <th>Lastname</th>
-      <th>Street</th>
+      <th>Phone</th>
+      <th>E-mail</th>      
       <th>Vehicle</th>
-      <th></th>
-      <th></th>
-      
+    
     </tr>
+
+{{#each userData}}
     <tr>
-      <td>Jill</td>
-      <td>Smith</td>
-      <td>50</td>
-      <td>50</td>
-      <td>50</td>
-      <td>50</td>
+      <td>{{username}}</td>
+      <td>{{name}}</td>
+      <td>{{lastName}}</td>
+      <td>{{phone}}</td>
+      <td>{{email}}</td>
+
+      <td>
+        <select name="vehicle" id="vehicle">
+          {{#each vehicleData}}
+           
+           <option value="{{_id}}">
+            {{_id}}
+           </option>
+           {{/each}}  
+        </select>
+      </td>
+
       <td><button class="secondary-btn">EDIT</button></td>
       <td><button class="secondary-btn">DELETE</button></td>
     </tr>
-    <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
-      <td>94</td>
-      <td>94</td>
-      <td>94</td>
-      <td>94</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
-    </tr>
+
+  {{/each}}
+
   </table>
-   </section>
+  </div>
+  </section>
+

@@ -10,7 +10,7 @@ const userSchema = new Schema(
       street: String, 
       vehicle: {
         type: Schema.Types.ObjectId,
-        ref: 'Vehicle',
+        ref: 'Vehicle'  
       },
       email: String,
       phone: Number,
