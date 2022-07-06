@@ -14,6 +14,11 @@ const userSchema = new Schema(
       },
       email: String,
       phone: Number,
+      status: {
+        type: String,
+        enum: ['Available', 'Unavailable', 'Onboarding'],
+        required: true
+    }
 
   },
 
