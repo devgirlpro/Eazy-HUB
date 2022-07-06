@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="/stylesheets/style.css" />
+
+ <section class="employee-section">
+      <div>
+            <button class="prominent" id="add-driver-btn">NewDriver</button>
+            <div>
+              <img class="search-img" src="/images/search.svg" alt="">
+               <input type="search" name="" id="" placeholder="search for person">
+               <button>search</button>
+            </div>
+      </div>
+   
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Phone</th>
+      <th>E-mail</th>      
+      <th>Vehicle</th>
+    
+    </tr>
+
+  
+
+{{#each userData}}
+  {{#if selected}}
+  <form action="/employee/edit/{{_id}}" method="POST">
+
+	{{!-- <label for="">Username: </label> --}}
+	<input type="text" name="username" value="{{username}}"><br>
+
+
+    {{!-- <label for="">Name: </label> --}}
+    <input type="text" name="name" value="{{name}}"><br>
+
+    {{!-- <label for="">LastName: </label> --}}
+    <input type="text" name="lastName" value="{{lastName}}"><br>
+
+     {{!-- <label for="">Phone: </label> --}}
+    <input type="numbder" name="phone" value="{{phone}}"><br>
+
+     {{!-- <label for="">Email: </label> --}}
+    <input type="text" name="email" value="{{email}}"><br>
+
+      {{!-- <label for="">Vehicle: </label> --}}
+       <select name="vehicle" id="vehicle">
+          {{#each ../vehicleData}}
+           
+           <option value="{{_id}}">
+            {{license}}-
+            {{model}}
+           </option>
+           {{/each}}  
+        </select>
+
+
+<button type="submit">Save Changes</button>
+
+</form>
+
+    {{/if}}
+    <tr>
+      <td>{{username}}</td>
+      <td>{{name}}</td>
+      <td>{{lastName}}</td>
+      <td>{{phone}}</td>
+      <td>{{email}}</td>
+      <td>{{vehicle.license}}</td>
+
+      {{!-- <td>
+     
+      </td> --}}
+
+      {{!-- <td><button class="secondary-btn">EDIT</button></td> --}}
+      <td><button class="secondary-btn"><a href="/employee/edit/{{_id}}"></a>DELETE</button></td>
+    </tr>
+
+  {{/each}}
+
+   
+
+  </table>
+  </div>
+  </section>
