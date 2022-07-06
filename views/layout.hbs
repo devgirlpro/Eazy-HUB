@@ -1,42 +1,69 @@
+<!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <title>EAZY-HUB</title>
+</head>
+<body>
+  
+<div class="primary-nav">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{appTitle}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+	<button href="#" class="hamburger open-panel nav-toggle">
+<span class="screen-reader-text">Menu</span>
+</button>
 
-  <body>
-    <nav>
-      <img src="" alt="" />
-      <ul>
-        <li><img style="width: 14px" class="icons" src="/images/dashboard.svg" alt="" /><a href="/manager"><i></i>Dashboard</a></li>
-        <li><img style="width: 13px" class="icons" src="/images/employees.svg" alt="" /><a href="/employee"><i></i>Employes</a></li>
-        <li><img style="width: 15px" class="icons" src="/images/vehicle.svg" alt="" /><a href="/vehicle"><i></i>Vehicles</a></li>
-        <li><img style="width: 14px" class="icons" src="/images/document.svg" alt="" /><a href=""><i></i>Ensurance</a></li>
-        <li><img style="width: 16px" class="icons" src="/images/time.svg" alt="" /><a href=""><i></i>Time managent</a></li>
-        <li><img style="width: 15px" class="icons" src="/images/team.svg" alt="" /><a href=""><i></i>Team management</a></li>
-        <li><img style="width: 12px" class="icons" src="/images/maps.svg" alt="" /><a href=""><i></i>Maps</a></li>
-      </ul>
-      <ul>
-        <li>
-          <img class="icons" src="/images/gear.svg" alt="" />
-          <a href="" class="logout">Logout </a></li>
-      </ul>
-    </nav>
+	<nav role="navigation" class="menu">
+
+		<a href="#" class="logotype">EAZY<span>HUB</span></a>
+
+		<div class="overflow-container">
+
+			<ul class="menu-dropdown">
+
+				<li><a href="#">Dashboard</a><span class="icon"><i class="fa fa-dashboard"></i></span></li>
+
+				<li><a href="/employee">Employee</a><span class="icon"><i class="fa fa-users"></i></span></li>
+
+				<li><a href="/vehicles">Vehicles</a><span class="icon"><i class="fa fa-car"></i></span></li>
+        
+				<li><a href="/tmanagement">Time management</a><span class="icon"><i class="fa fa-calendar"></i></span></li>
+        
+				<li><a href="/maps">Maps</a><span class="icon"><i class="fa fa-map"></i></span></li>
+
+				<li><a href="/settings">Settings</a><span class="icon"><i class="fa fa-cog"></i></span></li>
+
+			</ul>
+
+		</div>
+
+	</nav>
+
+</div>
+
+<div class="new-wrapper">
+
+	<div id="main">
+
+		<div id="main-contents">
+
+	
+        
+        
+        {{{body}}}
 
 
-    {{{body}}}
+		</div>
 
-    <script src="/js/script.js"></script>
-  </body>
+	</div>
 
+</div>
+</body>
 </html>
+
+
+

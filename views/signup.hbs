@@ -1,34 +1,44 @@
-<h1>Sign Up</h1>
-<form action="/signup" method="POST">
+<script>
+	const nav = document.querySelector('.primary-nav');
 
-	<label for="">Username: </label>
-	<input type="text" name="username"><br>
-
-	<label for="">Password: </label>
-	<input type="password" name="password"><br>
-
-    <label for="">Name: </label>
-    <input type="text" name="name"><br>
-
-    <label for="">LastName: </label>
-    <input type="text" name="lastName"><br>
-
-    <label for="">Street: </label>
-    <input type="text" name="street"><br>
-
-     <label for="">Email: </label>
-    <input type="text" name="email"><br>
-
-     <label for="">Phone: </label>
-    <input type="numbder" name="phone"><br>
-
-    <button><a href="/">HomePage</a></button>
-   
-	
+	function changeNav() {
+		nav.style.width = '0px';
+		nav.style.visibility = 'hidden'
+		return nav;
+	}
+	console.log('anything');
+	console.log(nav);
+	changeNav();
+</script>
 
 
-        <button type="submit">Sign Up 🐵</button>
-	{{#if message}}
-		<h3>{{message}}</h3>
-	{{/if}}
-</form>
+<a href="#" class="login-logo">EAZY<span>HUB</span></a>
+
+<div class="signin signup">
+  <h1>Sign Up</h1>
+  <form action="/signup" method="POST">
+
+    <input class="input" type="text" name="username" placeholder=" Username"/><br />
+
+    <input class="input" type="password" name="password" placeholder=" Password"/><br />
+
+    <input class="input" type="text" name="name" placeholder=" Name"/><br />
+
+    <input class="input" type="text" name="lastName" placeholder=" Last Name"/><br />
+
+    <input class="input" type="text" name="street" placeholder=" Street"/><br />
+
+    <input class="input" type="text" name="email" placeholder=" E-Mail"/><br />
+
+    <input class="input" type="number" name="phone" placeholder=" Phone"/><br />
+
+    <button class="signup-btn"><a href="/">HomePage</a></button>
+
+    <button class="signup-btn" type="submit">Sign Up</button>
+
+    {{#if message}}
+      <h3>{{message}}</h3>
+    {{/if}}
+  </form>
+
+</div>

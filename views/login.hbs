@@ -1,4 +1,4 @@
-
+{{!-- 
 
 
 <section class="login-section">
@@ -37,14 +37,85 @@
 </section>
 
 
+ --}}
+
+
+
+
+
+{{!-- ////////////////////////////////////////////////// --}}
 <script>
-	
-	const nav = document.querySelectorAll('nav');
+	const nav = document.querySelector('.primary-nav');
 
 	function changeNav() {
-		return nav[0].style.visibility = 'hidden';
+		nav.style.width = '0px';
+		nav.style.visibility = 'hidden'
+		return nav;
 	}
 	console.log('anything');
 	console.log(nav);
 	changeNav();
 </script>
+
+
+<a href="#" class="login-logo">EAZY<span>HUB</span></a>
+
+<section class="login-section">
+
+</section>
+<div class="signin">
+
+  <form action="#" method="post" autocomplete="off">
+
+    <div class="group head">
+
+      <h2>Welcome Back,</h2>
+
+      <p>Sign In To Continue</p>
+
+    </div>
+
+    <div class="group">
+
+      <label for="username-field">Username</label><br>
+
+      <input type="text" name="username" id="username-field" required>
+
+    </div>
+
+    <div class="group">
+
+      <label for="password-field">Password</label><br>
+
+      <input type="password" name="password" id="password-field" required>
+
+      <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+
+    </div>
+
+    <div class="group forgot-pass-link">
+
+
+    </div>
+
+    <div class="group">
+
+      <button type="submit"><span>Login</span></button>
+
+    </div>
+
+    <div class="group sign-up-link">
+
+      <p>New User? <a href="/signup">Signup</a></p>
+
+    </div>
+
+  		{{#if message}}
+			<h3>{{message}}</h3>
+		{{/if}}
+		
+	</form>
+</section>
+
+</div>
+
