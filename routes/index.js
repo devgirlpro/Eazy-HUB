@@ -1,5 +1,5 @@
 const router = require("express").Router();
-
+const bcrypt = require('bcryptjs')
 
 const User = require("../models/User");
 
@@ -34,7 +34,7 @@ router.get("/employee/edit/:userId", (req, res) => {
           }else {user.selected = false}
           return user
         })
-        res.render("edit", {userData, vehicleData})
+        res.render("edit", {userData, vehicleData, userId})
       })
    })
    .catch(error => console.log(error)) 
@@ -44,9 +44,12 @@ router.get("/employee/edit/:userId", (req, res) => {
 /* GET employee page */
 //access to the user from db
 router.get("/employee", (req, res, next) => {
+  
   User.find()
+ 
    .populate("vehicle")
    .then(userData => {
+    console.log("USERDATA =>", userData)
     // Vehicle.find()
       // .then((vehicleData) => {
         res.render("employee", {userData})
@@ -54,6 +57,49 @@ router.get("/employee", (req, res, next) => {
    })
    .catch(error => console.log(error))  
 });
+
+
+
+router.post('/employee', (req, res, next) => {
+	const {username, password, name, lastName, street, email, phone} = req.body
+	// console.log("req.body =>", req.body)
+	// validation
+	if (password.length < 4) {
+		res.render('employee', { message: 'Password has to be 4 chars min' })
+		return
+	}
+	// check if username is not empty
+	if (username === '') {
+		res.render('signup', { message: 'Username cannot be empty' })
+		return
+	}	
+	// validation passed
+	// check if that username already exists 
+	User.findOne({ username: username })
+		.then(userFromDB => {
+			// if there is a user
+			if (userFromDB !== null) {
+				res.render('signup', { message: 'Your username is already taken' })
+				return
+			} else {
+				// we can use that username
+				// we hash the password 
+				const salt = bcrypt.genSaltSync()
+				const hash = bcrypt.hashSync(password, salt)
+				// console.log(hash)
+				// create the user
+				User.create({username, password: hash, name, lastName, street, email, phone})
+					.then(createdUser => {
+						// console.log(createdUser)
+						res.redirect('/employee')
+					})
+					.catch(err => {
+						next(err)
+					})
+			}
+		})
+});
+
 
 
 //edite a user

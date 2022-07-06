@@ -7,6 +7,10 @@ document.addEventListener(
 );
 
 
-// function Openform(){
-//   document.getElementById('add-driver-btn').style.display = 'block';
-// }
+const btn =  document.getElementById('add-driver-btn');
+
+ btn.addEventListener("click", () => {
+  console.log("hello eworld")
+  const form = document.getElementById("add-driver").style.display = "block";
+  
+ })

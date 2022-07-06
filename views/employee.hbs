@@ -3,7 +3,7 @@
 
  <section class="employee-section">
       <div>
-            <button class="prominent" id="add-driver-btn">NewDriver</button>
+            <button class="prominent" id="add-driver-btn">ADD New Driver</button>
             <div>
               <img class="search-img" src="/images/search.svg" alt="">
                <input type="search" name="" id="" placeholder="search for person">
@@ -52,15 +52,56 @@
         DELETE</button></td>
     </tr>
 
-  {{/each}}
-
-   
+  {{/each}}  
 
   </table>
   </div>
-  </section>
+
+
+
+
+<div id="add-driver"  style="display:none" >
+<form action="/employee" method="POST">
+
+	 <label for="">Username: </label>
+	 <input type="text" name="username">
+
+	 <label for="">Password: </label>
+	 <input type="password" name="password">
+
+    <label for="">Name: </label>
+    <input type="text" name="name">
+
+    <label for="">LastName: </label>
+    <input type="text" name="lastName">
+
+    <label for="">Street: </label>
+    <input type="text" name="street">
+
+    <label for="">Email: </label>
+    <input type="text" name="email">
+
+    <label for="">Phone: </label>
+    <input type="numbder" name="phone">
+
+    <button type="submit">ADD</button>
+
+    	{{#if message}}
+		<h3>{{message}}</h3>
+	{{/if}}
+
+</form>
+</div>
+
+
+</section>
+
+
+
+
+
 
 
 
  
-<script src="../public/js/script.js"></script>
+<script src="/js/script.js"></script>
