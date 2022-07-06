@@ -3,7 +3,6 @@ const { Schema, model } = require("mongoose");
 
 const vehicleSchema = new Schema(
     {
-        Licenceplate: String,
         user: {
             type: Schema.Types.ObjectId,
             ref: 'lastname',
@@ -11,7 +10,12 @@ const vehicleSchema = new Schema(
         brand: String,
         model: String,
         color: String,
-        license: String
+        license: String,
+        status: {
+            type: String,
+            enum: ['Available', 'Unavailable', 'Pending'],
+            required: true
+        }
     }
 );
 

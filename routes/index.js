@@ -13,6 +13,13 @@ router.get("/", (req, res, next) => {
 });
 
 
+/* GET manager page */
+router.get("/manager", (req, res, next) => {
+  res.render("manager");
+});
+
+
+
 /* GET employee page */
 //access to the user from db
 router.get("/employee", (req, res, next) => {
@@ -30,13 +37,28 @@ router.get("/employee", (req, res, next) => {
 });
 
 
+/* GET vehicle page */
+//access to the vehicles from db
+router.get("/vehicle", (req, res, next) => {
+    Vehicle.find()
+    .then((vehicleData) => {
+      console.log()
+      res.render("vehicle", {vehicleData})
+    })
+    .catch(error => console.log(error))
+
+  // res.render("vehicle");
+});
+
+
+
 
 
 
 /* GET profile page */
-router.get("/driver", (req, res, next) => {
-  res.render("driver");
-});
+// router.get("/driver", (req, res, next) => {
+//   res.render("driver");
+// });
 
 
 /* GET manager page */
@@ -50,10 +72,6 @@ router.get("/driver", (req, res, next) => {
 
   // res.render("manager");
 // });
-
-
-
-
 
 
 

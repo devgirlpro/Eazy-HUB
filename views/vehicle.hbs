@@ -1,0 +1,53 @@
+<h2>Vehicle info from DB</h2>
+
+<link rel="stylesheet" href="/stylesheets/style.css" />
+
+ <section class="employee-section">
+      <div>
+            {{!-- <button class="prominent">NEW</button> --}}
+            <div>
+              <img class="search-img" src="/images/search.svg" alt="">
+               <input type="search" name="" id="" placeholder="search for person">
+               <button>search</button>
+            </div>
+      </div>
+   
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Color</th>
+      <th>License</th>      
+      <th>status</th>
+    
+    </tr>
+
+{{#each vehicleData}}
+    <tr>
+      <td>{{brand}}</td>
+      <td>{{model}}</td>
+      <td>{{color}}</td>
+      <td>{{license}}</td>
+      <td>{{status}}</td>
+
+      {{!-- <td>
+        <select name="vehicle" id="vehicle">
+          {{#each vehicleData}}
+           
+           <option value="{{status}}">
+            {{status}}
+           </option>
+           {{/each}}  
+        </select>
+      </td> --}}
+
+      <td><button class="secondary-btn">EDIT</button></td>
+      <td><button class="secondary-btn">DELETE</button></td>
+    </tr>
+
+  {{/each}}
+
+  </table>
+  </div>
+  </section>
