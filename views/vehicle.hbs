@@ -3,11 +3,11 @@
  <section class="employee-section">
       <div>
             {{!-- <button class="prominent">NEW</button> --}}
-            <div>
+            {{!-- <div>
               <img class="search-img" src="/images/search.svg" alt="">
                <input type="search" name="" id="" placeholder="search for person">
                <button>search</button>
-            </div>
+            </div> --}}
       </div>
    
 <div style="overflow-x:auto;">
@@ -27,9 +27,9 @@
       <td>{{model}}</td>
       <td>{{color}}</td>
       <td>{{license}}</td>
-      <td>{{status}}</td>
+      <td>{{available}}</td>
 
-      <td>
+      {{!-- <td>
         <select name="vehicle" id="vehicle">
          
           {{#each vehicleData}}
@@ -39,10 +39,10 @@
            </option>
            {{/each}}  
         </select>
-      </td>
+      </td> --}}
 
-      <td><button class="secondary-btn">EDIT</button></td>
-      <td><button class="secondary-btn">DELETE</button></td>
+      {{!-- <td><button class="secondary-btn">EDIT</button></td> --}}
+      <td><button class="secondary-btn"><a href="/vehicle/delete/{{_id}}">DELETE</a></button></td>
     </tr>
 
   {{/each}}
@@ -50,3 +50,8 @@
   </table>
   </div>
   </section>
+
+
+
+
+
