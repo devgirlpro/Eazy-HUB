@@ -1,24 +1,19 @@
-<section class="index-section">
-	
-	
-	<img src="/images/car-logo.svg" alt="">
+<link rel="stylesheet" href="/stylesheets/style.css" />
 
-    <div>
-		<button><a class="back-btn" href="/login">Login</a></button>
-        <button><a class="back-btn" href="/signup">Sign Up</a></button>
-	    
+<section class="login-section">
+  <div class="navbar">
+    <div class="logo">
+      <a href="/" class="index-logo">EAZY<span>HUB</span></a>
     </div>
-	
+
+    <div class="nav__links">
+      <a href="/" class="active nav__link">Home</a>
+      <a href="/login" class="nav__link">Login</a>
+      <a href="/signup" class="nav__link">Sign Up</a>
+    </div>
+  </div>
+
+  <div id="home" class="section">
+    <h1>A Managing Hub for Logistic Companies</h1>
+  </div>
 </section>
-
-<script>
-	
-	const nav = document.querySelectorAll('nav');
-
-	function changeNav() {
-		return nav[0].style.visibility = 'hidden';
-	}
-	console.log('anything');
-	console.log(nav);
-	changeNav();
-</script>

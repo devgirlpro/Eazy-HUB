@@ -9,21 +9,12 @@ const Vehicle = require("../models/Vehicle");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  res.render("index", {layout: false});
 });
  
 router.get("/employee/delete/:userId", (req, res, next) => {
   User.findByIdAndRemove({_id: req.params.userId})
     .then(() => res.redirect("/employee"))
-    .catch(error => console.log(error))
-  
-})
-
-
-
-router.get("/vehicle/delete/:vehicleId", (req, res, next) => {
-  Vehicle.findByIdAndRemove({_id: req.params.vehicleId})
-    .then(() => res.redirect("/vehicle"))
     .catch(error => console.log(error))
   
 })
@@ -144,30 +135,11 @@ let user = {
   email
 }
 
-let vehiclesNotAvailable = [];
-
-User.find()
-.then(users => {
-    users.forEach(user => {
-        console.log("user: ", user);
-        if (user.vehicle) {
-            vehiclesNotAvailable.push(user.vehicle);
-        }
-    })
-    console.log("vehiclesnotavailable: ", vehiclesNotAvailable)
-
-    Vehicle.find()
-    .then(vehicles => {
-        vehicles.forEach(vehicle => {
-            if (!vehiclesNotAvailable.includes(vehicle)) {
-                vehicle.available = true;
-                console.log("vehicle is available: ", vehicle);
-                vehicle.save();
-            }
-        })
-    })
-})
-
+// User.find()
+// .then(userFromDB => {
+//   if(vehicle)
+// })
+// .catch()
 
 
 if(vehicle) {
@@ -183,8 +155,13 @@ if(vehicle) {
 }else {
   user.available = true;
   user.$unset = {vehicle: 1};
+  // user.vehicle = vehicle;
+  // Vehicle.findById(vehicle)
+  // .then(vehicleFromDB => {
+  //  vehicleFromDB.available = true;
+  //  vehicleFromDB.save()
 }
-
+// )}
   // console.log("req.body.vehicle =>", req.body.vehic)
   User.findByIdAndUpdate(userId, user)
   .then(user => {

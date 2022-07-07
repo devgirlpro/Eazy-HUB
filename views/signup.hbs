@@ -1,36 +1,24 @@
-<script>
-	const nav = document.querySelector('.primary-nav');
-
-	function changeNav() {
-		nav.style.width = '0px';
-		nav.style.visibility = 'hidden'
-		return nav;
-	}
-	console.log('anything');
-	console.log(nav);
-	changeNav();
-</script>
-
+{{!-- <link rel="stylesheet" href="/stylesheets/style.css">
 
 <a href="#" class="login-logo">EAZY<span>HUB</span></a>
 
 <div class="signin signup">
   <h1>Sign Up</h1>
   <form action="/signup" method="POST">
+   
+    <input  type="text" name="username" placeholder=" Username"/><br />
 
-    <input class="input" type="text" name="username" placeholder=" Username"/><br />
+    <input type="password" name="password" placeholder=" Password"/><br />
 
-    <input class="input" type="password" name="password" placeholder=" Password"/><br />
+    <input type="text" name="name" placeholder=" Name"/><br />
 
-    <input class="input" type="text" name="name" placeholder=" Name"/><br />
+    <input type="text" name="lastName" placeholder=" Last Name"/><br />
 
-    <input class="input" type="text" name="lastName" placeholder=" Last Name"/><br />
+    <input type="text" name="street" placeholder=" Street"/><br />
 
-    <input class="input" type="text" name="street" placeholder=" Street"/><br />
+    <input type="text" name="email" placeholder=" E-Mail"/><br />
 
-    <input class="input" type="text" name="email" placeholder=" E-Mail"/><br />
-
-    <input class="input" type="number" name="phone" placeholder=" Phone"/><br />
+    <input type="number" name="phone" placeholder=" Phone"/><br />
 
     <button class="signup-btn"><a href="/">HomePage</a></button>
 
@@ -42,3 +30,66 @@
   </form>
 
 </div>
+
+ --}}
+
+
+<link rel="stylesheet" href="/stylesheets/style.css" />
+
+
+
+<section class="login-section">
+    <a href="#" class="login-logo">EAZY<span>HUB</span></a>
+    <div class="signin">
+
+  <form action="#" method="post" autocomplete="off">
+
+    <div class="group head">
+
+      <h2>Not a Member?</h2>
+
+      <p>Sign Up</p>
+
+    </div>
+
+  <form action="/signup" method="POST">
+    <div class="group">
+         <label for="username-field">Username</label><br>
+         <input  type="text" name="username" /><br />
+
+                  <label for="password-field">Password</label><br>
+         <input  type="password" name="password" /><br />
+
+                  <label for="name-field">Name</label><br>
+         <input  type="text" name="name" /><br />
+
+                  <label for="lastname-field">Lastname</label><br>
+         <input  type="text" name="lastname" /><br />
+
+                  <label for="street-field">Street</label><br>
+         <input  type="text" name="street" /><br />
+
+                  <label for="email-field">E-Mail</label><br>
+         <input  type="text" name="email" /><br />
+                           
+            <label for="phone-field">Phone</label><br>
+         <input  type="text" name="phone" /><br />
+
+
+ <button class="signup-btn" type="submit">Sign Up</button>
+    </div>
+
+    
+
+  		{{#if message}}
+			<h3>{{message}}</h3>
+		{{/if}}
+		
+	</form>
+</section>
+
+</div>
+</section>
+
+
+

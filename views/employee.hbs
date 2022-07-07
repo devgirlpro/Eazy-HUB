@@ -1,27 +1,44 @@
- 
 <link rel="stylesheet" href="/stylesheets/style.css" />
 
- <section class="employee-section">
-      <div>
-            <button class="prominent" id="add-driver-btn">ADD New Driver</button>
-            <div>
-            
-               <input type="search" name="" id="" placeholder="search for person">
-               <button>search</button>
-            </div>
-      </div>
-   <hr>
-<div style="overflow-x:auto;">
-  <table>
-    <tr>
-      <th>Username</th>
-      <th>Name</th>
-      <th>Lastname</th>
-      <th>Phone</th>
-      <th>E-mail</th>      
-      <th>Vehicle</th>
-    
-    </tr>
+{{!-- 100% width --}}
+<section class="employee-section"> 
+
+{{!-- Add Employee --}}
+  <div class="employee-header">
+    <button class="prominent" id="add-driver-btn">ADD New Driver</button>
+    <div>
+
+
+      <script src="/table.js"></script>
+
+{{!-- search field --}}
+
+      {{!-- <input type="search" name="" id="" placeholder=" search for person" /> 
+      <button class="btn-search">
+        <a href="/search"> <i class="fa fa-search" style="font-size:25px"></i> search</a>
+      </button> --}}
+
+    </div>
+  </div>
+  
+
+
+  {{!-- TABLE Start --}}
+  <hr>
+
+  <div class="table-div" style="overflow-x:auto;">
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+      <tr>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Phone</th>
+        <th>E-mail</th>
+        <th>Vehicle</th>
+      </tr>
+        </thead>
+
 
 {{#each userData}}
     <tr>
@@ -31,76 +48,45 @@
       <td>{{phone}}</td>
       <td>{{email}}</td>
       <td>{{vehicle.model}}</td>
+      <td><a style="color:black" href="/employee/edit/{{_id}}"><i class="fa fa-edit" style="font-size:25px" ></i></a></td>
+      <td><a style="color:black" href="/employee/delete/{{_id}}"><i class="fa fa-trash" style="font-size:25px" ></i></a></td>
 
-      {{!-- <td>
-        <select name="vehicle" id="vehicle">
-          {{#each ../vehicleData}}
-           
-           <option value="{{_id}}">
-            {{license}}-
-            {{model}}
-           </option>
-           {{/each}}  
-        </select>
-      </td> --}}
+{{!-- //EDIT & DELETE BUTTONS --}}
+                
+          {{!-- <td class="icon-td"><button class="td-btn">
+              <a href="/employee/edit/{{_id}}"><i class="fa fa-edit" style="font-size:25px"></i></a>
+            </button></td>
+          <td class="icon-td"><button class="td-btn">
+              <a href="/employee/delete/{{_id}}"> <i class="fa fa-trash" style="font-size:25px"></i> </a>
+              </button></td>
+        </tr> --}}
 
-      <td><button class="secondary-btn">
-        <a href="/employee/edit/{{_id}}">EDIT</a>
-        </button></td>
-      <td><button class="secondary-btn">
-        <a href="/employee/delete/{{_id}}">DELETE</a>
-        </button></td>
-    </tr>
 
-  {{/each}}  
+  {{/each}}
 
-  </table>
+    </table>
   </div>
-  </section>
+<hr>
+  <div class="adddriver" id="add-driver" style="display:none">
+    <form action="/employee" method="POST">
 
+      <tr>
+        <input type="text" name="username" placeholder="Username"/>
+        <input type="password" name="password" placeholder="Password"/>
+        <input type="text" name="name" placeholder="Name"/>
+        <input type="text" name="lastName" placeholder="Lastname"/>
+        <input type="text" name="phone" placeholder="Phone"/>
+        <input type="text" name="email" placeholder="E-Mail"/>
 
-<div id="add-driver"  style="display:none" >
-<form action="/employee" method="POST">
+      </tr>
+<button type="submit" class="btn-secondary">Add</button>
 
-	 <label for="">Username: </label>
-	 <input type="text" name="username">
+      {{#if message}}
+        <h3>{{message}}</h3>
+      {{/if}}
 
-	 <label for="">Password: </label>
-	 <input type="password" name="password">
-
-    <label for="">Name: </label>
-    <input type="text" name="name">
-
-    <label for="">LastName: </label>
-    <input type="text" name="lastName">
-
-    <label for="">Street: </label>
-    <input type="text" name="street">
-
-    <label for="">Email: </label>
-    <input type="text" name="email">
-
-    <label for="">Phone: </label>
-    <input type="numbder" name="phone">
-
-    <button type="submit">ADD</button>
-
-    	{{#if message}}
-		<h3>{{message}}</h3>
-	{{/if}}s
-
-</form>
-</div>
-
+    </form>
+  </div>
 
 </section>
-
-
-
-
-
-
-
-
- 
 <script src="/js/script.js"></script>
