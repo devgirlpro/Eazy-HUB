@@ -139,25 +139,29 @@ let user = {
   phone, 
   email
 }
+
+
+
+
 if(vehicle) {
   user.available = false;
   user.vehicle = vehicle;
   Vehicle.findById(vehicle)
   .then(vehicleFromDB => {
-    console.log("VEHIVLE===>", vehicleFromDB)
-    let vehicleCopy = { ...vehicleFromDB }
-    vehicleCopy.available = false;
-    console.log("VEHIVLE After===>", vehicleCopy)
-    Vehicle.findByIdAndUpdate(vehicle, vehicleCopy)
+   vehicleFromDB.available = false;
+   vehicleFromDB.save()
   })
 // console.log("VEHICLE ==>>", vehicle)
 
-
-
 }else {
   user.available = true;
-  user.$unset = {vehicle: 1}
-}
+  user.$unset = {vehicle: 1};
+  user.vehicle = vehicle;
+  Vehicle.findById(vehicle)
+  .then(vehicleFromDB => {
+   vehicleFromDB.available = true;
+   vehicleFromDB.save()
+})}
   // console.log("req.body.vehicle =>", req.body.vehic)
   User.findByIdAndUpdate(userId, user)
   .then(user => {
