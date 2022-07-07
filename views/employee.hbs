@@ -1,38 +1,39 @@
- 
 <link rel="stylesheet" href="/stylesheets/style.css" />
+<section class="employee-section">
+  <div class="employee-header">
+    <button class="prominent" id="add-driver-btn">ADD New Driver</button>
+    <div>
 
- <section class="employee-section">
-      <div>
-            <button class="prominent" id="add-driver-btn">ADD New Driver</button>
-            <div>
-            
-               <input type="search" name="" id="" placeholder="search for person">
-               <button>search</button>
-            </div>
-      </div>
-   <hr>
-<div style="overflow-x:auto;">
-  <table>
-    <tr>
-      <th>Username</th>
-      <th>Name</th>
-      <th>Lastname</th>
-      <th>Phone</th>
-      <th>E-mail</th>      
-      <th>Vehicle</th>
-    
-    </tr>
+      <input type="search" name="" id="" placeholder=" search for person" />
+      
+      <button class="td-btn">
+              <a href="/search"> <i class="fa fa-search" style="font-size:25px"></i> </a>
+              </button>
+    </div>
+  </div>
+  <hr />
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Phone</th>
+        <th>E-mail</th>
+        <th>Vehicle</th>
 
-{{#each userData}}
-    <tr>
-      <td>{{username}}</td>
-      <td>{{name}}</td>
-      <td>{{lastName}}</td>
-      <td>{{phone}}</td>
-      <td>{{email}}</td>
-      <td>{{vehicle.model}}</td>
+      </tr>
 
-      {{!-- <td>
+      {{#each userData}}
+        <tr>
+          <td>{{username}}</td>
+          <td>{{name}}</td>
+          <td>{{lastName}}</td>
+          <td>{{phone}}</td>
+          <td>{{email}}</td>
+          <td>{{vehicle.model}}</td>
+
+          {{!-- <td>
         <select name="vehicle" id="vehicle">
           {{#each ../vehicleData}}
            
@@ -44,84 +45,42 @@
         </select>
       </td> --}}
 
-      <td><button class="secondary-btn">
-        <a href="/employee/edit/{{_id}}">EDIT</a>
-        </button></td>
-      <td><button class="secondary-btn">
-        <a href="/employee/edit/{{_id}}"></a>
-        DELETE</button></td>
-    </tr>
+          <td><button class="td-btn">
+              <a href="/employee/edit/{{_id}}"><i class="fa fa-edit" style="font-size:25px"></i></a>
+            </button></td>
+          <td><button class="td-btn">
+              <a href="/employee/edit/{{_id}}"> <i class="fa fa-trash" style="font-size:25px"></i> </a>
+              </button></td>
+        </tr>
 
-  {{/each}}  
+      {{/each}}
 
-  </table>
+    </table>
   </div>
-  </section>
-<form action="/signup" method="POST">
+<hr>
+  <div id="add-driver" style="display:none">
+    <form action="/employee" method="POST">
 
-    <input class="input" type="text" name="username" placeholder=" Username"/><br />
+      <tr>
+        <input type="text" name="username" placeholder="Username"/>
+        <input type="password" name="password" placeholder="Password"/>
+        <input type="text" name="name" placeholder="Name"/>
+        <input type="text" name="lastname" placeholder="Lastname"/>
+        <input type="text" name="phone" placeholder="Phone"/>
+        <input type="text" name="email" placeholder="E-Mail"/>
 
-    <input class="input" type="password" name="password" placeholder=" Password"/><br />
+      </tr>
+<button type="submit" class="td-btn">
+               <i class="fa fa-plus" style="font-size:25px"></i> </a>
+              </button>
 
-    <input class="input" type="text" name="name" placeholder=" Name"/><br />
+      {{#if message}}
+        <h3>{{message}}</h3>
+      {{/if}}
 
-    <input class="input" type="text" name="lastName" placeholder=" Last Name"/><br />
-
-    <input class="input" type="text" name="street" placeholder=" Street"/><br />
-
-    <input class="input" type="text" name="email" placeholder=" E-Mail"/><br />
-
-    <input class="input" type="number" name="phone" placeholder=" Phone"/><br />
-
-    <button class="signup-btn"><a href="/">HomePage</a></button>
-
-    <button class="signup-btn" type="submit">Sign Up</button>
-
-
-
-
-<div id="add-driver"  style="display:none" >
-<form action="/employee" method="POST">
-
-	 <label for="">Username: </label>
-	 <input type="text" name="username">
-
-	 <label for="">Password: </label>
-	 <input type="password" name="password">
-
-    <label for="">Name: </label>
-    <input type="text" name="name">
-
-    <label for="">LastName: </label>
-    <input type="text" name="lastName">
-
-    <label for="">Street: </label>
-    <input type="text" name="street">
-
-    <label for="">Email: </label>
-    <input type="text" name="email">
-
-    <label for="">Phone: </label>
-    <input type="numbder" name="phone">
-
-    <button type="submit">ADD</button>
-
-    	{{#if message}}
-		<h3>{{message}}</h3>
-	{{/if}}s
-
-</form>
-</div>
-
+    </form>
+  </div>
 
 </section>
 
-
-
-
-
-
-
-
- 
 <script src="/js/script.js"></script>

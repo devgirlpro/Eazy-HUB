@@ -4,10 +4,33 @@ body {
   font-family: 'Work Sans', sans-serif;
   margin: 0;
   background-color: #eee;
+  display: flex;
 }
+
 
 table {
   width: 100%;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+section.employee-section {
+  width: 88vw;
+  height: 90vh;
+}
+
+.employee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.employee-header input {
+  margin-right: 5px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #777;
 }
 
 div#main-contents {
@@ -17,9 +40,6 @@ div#main-contents {
   align-items: center;
 }
 
-.employee-section-div {
-  margin-bottom: 20px;
-}
 
 .btn-table {
   display: flex;
@@ -187,8 +207,8 @@ input#menu[type="checkbox"] {
 .employee-section-div {
   display: flex;
   justify-content: space-between;
+  
 }
-
 
 
 .sub-menu-dropdown {
@@ -245,6 +265,7 @@ input#menu[type="checkbox"] {
   transition: all 0.45s cubic-bezier(0.77, 0, 0.175, 1);
   background-color: #000;
 	z-index: 999;
+  width: 12vw;
 }
 
 .menu-dropdown {
@@ -314,7 +335,10 @@ input#menu[type="checkbox"] {
     border: none;
     color: #ddd;
     width: 200px;
+    padding: 10px;
   }
+
+
 
 
 
@@ -424,6 +448,17 @@ textarea {
 	font-size: 1em;
 	line-height: 1.5;
 	font-weight: 300;
+  
+}
+
+button {
+  color: #000;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 300;
+  width: 100px;
+  height: 40px;
+  border-radius: 6px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -623,9 +658,9 @@ h4, .h4 {font-size: 1.2em;}
 html, body { 
   min-height: 100vh; 
   width: 100%;
-  display: flex;
   align-items: center;
   font-family: "Poppins", sans-serif;
+
 }
 
 .group {
@@ -643,6 +678,9 @@ html, body {
   padding: 30px 30px 0px 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: fit-content;
 }
 
 .signup {
@@ -738,6 +776,11 @@ input {
   z-index: 2;
 }
 
+button.td-btn {
+  border: none;
+  width: fit-content;
+}
+
 .group button span {
   cursor: pointer;
   display: inline-block;
@@ -763,6 +806,25 @@ input {
   right: 0;
 }
 
+.index-logo {
+  display: block;
+  font-family: 'Work Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #000;
+  font-size: 25px;
+  padding: 10px;
+  text-align: center;
+}
+
+.index-logo span {
+  font-weight: 400;
+}
+
+.login-section {
+  width: 100vw;
+}
+
 .login-logo {
   display: block;
   font-family: 'Work Sans', sans-serif;
@@ -785,4 +847,67 @@ input {
     box-shadow: none;
   }
 }
+
+/* //////NAV BAR TOP INDEX */
+
+* {
+  padding: 0;
+  margin: 0;
+  /* box-sizing: border-box; */
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
+  width: 95vw;
+  position: fixed;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.logo h1 {
+  cursor: pointer;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__link {
+  margin: 0 10px;
+  color: black;
+  padding: 5px 15px;
+  border-radius: 100px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.nav__link.active,
+.nav__link:hover {
+  background-color: black;
+  color: white;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section:nth-child(odd) {
+  background-color: rgb(235, 235, 235);
+}
+
+
 

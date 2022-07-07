@@ -9,7 +9,7 @@ const Vehicle = require("../models/Vehicle");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  res.render("index", {layout: false});
 });
 
 

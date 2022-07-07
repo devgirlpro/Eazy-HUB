@@ -1,69 +1,76 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <title>EAZY-HUB</title>
-</head>
-<body>
-  
-<div class="primary-nav">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-	<button href="#" class="hamburger open-panel nav-toggle">
-<span class="screen-reader-text">Menu</span>
-</button>
+    <title>EAZY-HUB</title>
+  </head>
+  <body>
 
-	<nav role="navigation" class="menu">
+    <div class="primary-nav">
 
-		<a href="#" class="logotype">EAZY<span>HUB</span></a>
+      <button href="#" class="hamburger open-panel nav-toggle">
+        <span class="screen-reader-text">Menu</span>
+      </button>
 
-		<div class="overflow-container">
+      <nav role="navigation" class="menu">
 
-			<ul class="menu-dropdown">
+        <a href="#" class="logotype">EAZY<span>HUB</span></a>
 
-				<li><a href="#">Dashboard</a><span class="icon"><i class="fa fa-dashboard"></i></span></li>
+        <div class="overflow-container">
 
-				<li><a href="/employee">Employee</a><span class="icon"><i class="fa fa-users"></i></span></li>
+          <ul class="menu-dropdown">
 
-				<li><a href="/vehicles">Vehicles</a><span class="icon"><i class="fa fa-car"></i></span></li>
-        
-				<li><a href="/tmanagement">Time management</a><span class="icon"><i class="fa fa-calendar"></i></span></li>
-        
-				<li><a href="/maps">Maps</a><span class="icon"><i class="fa fa-map"></i></span></li>
+            <li><a href="#">Dashboard</a><span class="icon"><i
+                  class="fa fa-dashboard"
+                ></i></span></li>
 
-				<li><a href="/settings">Settings</a><span class="icon"><i class="fa fa-cog"></i></span></li>
+            <li><a href="/employee">Employee</a><span class="icon"><i
+                  class="fa fa-users"
+                ></i></span></li>
 
-			</ul>
+            <li><a href="/vehicles">Vehicles</a><span class="icon"><i
+                  class="fa fa-car"
+                ></i></span></li>
 
-		</div>
+            <li><a href="/tmanagement">Time management</a><span class="icon"><i
+                  class="fa fa-calendar"
+                ></i></span></li>
 
-	</nav>
+            <li><a href="/maps">Maps</a><span class="icon"><i
+                  class="fa fa-map"
+                ></i></span></li>
 
-</div>
+            <li><a href="/settings">Settings</a><span class="icon"><i
+                  class="fa fa-cog"
+                ></i></span></li>
 
-<div class="new-wrapper">
+          </ul>
 
-	<div id="main">
+        </div>
 
-		<div id="main-contents">
+      </nav>
 
-	
-        
-        
-        {{{body}}}
+    </div>
 
+    {{!-- <div class="new-wrapper"> --}}
 
-		</div>
+      {{!-- <div id="main"> --}}
 
-	</div>
+        <div id="main-contents">
 
-</div>
-</body>
+          {{{body}}}
+
+        </div>
+
+      </div>
+
+    </div>
+  </body>
 </html>
-
-
-

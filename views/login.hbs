@@ -1,68 +1,11 @@
-{{!-- 
+<link rel="stylesheet" href="/stylesheets/style.css" />
+
 
 
 <section class="login-section">
-	<div class="login-div">
-		<a class="breadcrumb" href="/">Home / Login</a>
-	</div>
-	
-	<img src="/images/car-logo.svg" alt="">
-
-	<div class="login-div">
-		<a class="back-btn" href="/">Home</a>
-		<h1>Log In</h1>
-		<p>copywrite</p>
-	</div>
-	
-	<form action="/login" method="POST">
-
-		<label for="">Name: </label>
-		<input type="text" name="username" placeholder="username">
-
-		<label for="">Password: </label>
-		<input type="password" name="password" placeholder="password">
-
-		<div class="login-div">
-			<button type="submit" href="/login">Log In</button>
-			<a class="back-btn" href="/">Forgot password?</a>
-		</div>
-
-		
-
-		{{#if message}}
-			<h3>{{message}}</h3>
-		{{/if}}
-		
-	</form>
-</section>
-
-
- --}}
-
-
-
-
-
-{{!-- ////////////////////////////////////////////////// --}}
-<script>
-	const nav = document.querySelector('.primary-nav');
-
-	function changeNav() {
-		nav.style.width = '0px';
-		nav.style.visibility = 'hidden'
-		return nav;
-	}
-	console.log('anything');
-	console.log(nav);
-	changeNav();
-</script>
-
 
 <a href="#" class="login-logo">EAZY<span>HUB</span></a>
 
-<section class="login-section">
-
-</section>
 <div class="signin">
 
   <form action="#" method="post" autocomplete="off">
@@ -118,4 +61,6 @@
 </section>
 
 </div>
+</section>
+
 
