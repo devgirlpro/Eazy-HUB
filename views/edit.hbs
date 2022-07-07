@@ -4,7 +4,6 @@
       <div>
             <button class="prominent" id="add-driver-btn">NewDriver</button>
             <div>
-              <img class="search-img" src="/images/search.svg" alt="">
                <input type="search" name="" id="" placeholder="search for person">
                <button>search</button>
             </div>
@@ -40,6 +39,8 @@
 <td><input type="text" name="email" value="{{email}}"></td>
 <td>
    <select name="vehicle" id="vehicle">
+     <option value></option>
+     <option value="{{userData.vehicle}}" selected></option>
           {{#each ../vehicleData}}
            
            <option value="{{_id}}">

@@ -49,7 +49,7 @@ router.get("/employee", (req, res, next) => {
  
    .populate("vehicle")
    .then(userData => {
-    console.log("USERDATA =>", userData)
+    // console.log("USERDATA =>", userData)
     // Vehicle.find()
       // .then((vehicleData) => {
         res.render("employee", {userData})
@@ -102,10 +102,64 @@ router.post('/employee', (req, res, next) => {
 
 
 
+
+//get employee delete page
+// router.get("/employee/delete/:userId", (req, res) => {
+//   const userId = req.params.userId
+//   User.find()
+  //"vehicle" => it's refer to the vehicle in user scema
+  //  .populate("vehicle")
+//    .then(userData => {
+//     Vehicle.find()
+//       .then((vehicleData) => {
+//         userData.map(user => {
+//           if(user._id == userId) {
+//             user.selected = true
+//           }else {user.selected = false}
+//           return user
+//         })
+//         res.render("edit", {userData, vehicleData, userId})
+//       })
+//    })
+//    .catch(error => console.log(error)) 
+// }) 
+
+
+
+
 //edite a user
 router.post("/employee/edit/:userId", (req, res) => {
   const userId = req.params.userId
-  User.findByIdAndUpdate(userId, req.body)
+  // console.log("req.body //edite=>", req.body);
+const {username, name, lastName, phone, email, vehicle} = req.body;
+let user = {
+  username, 
+  name, 
+  lastName, 
+  phone, 
+  email
+}
+if(vehicle) {
+  user.available = false;
+  user.vehicle = vehicle;
+  Vehicle.findById(vehicle)
+  .then(vehicleFromDB => {
+    console.log("VEHIVLE===>", vehicleFromDB)
+    let vehicleCopy = { ...vehicleFromDB }
+    vehicleCopy.available = false;
+    console.log("VEHIVLE After===>", vehicleCopy)
+    Vehicle.findByIdAndUpdate(vehicle, vehicleCopy)
+  })
+// console.log("VEHICLE ==>>", vehicle)
+
+
+
+}else {
+  user.available = true;
+  user.$unset = {vehicle: 1}
+}
+  // console.log("req.body.vehicle =>", req.body.vehic)
+  User.findByIdAndUpdate(userId, user)
   .then(user => {
     res.redirect("/employee")
   })
