@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="/stylesheets/style.css" />
 
  <section class="employee-section">
-      <div class="employee-section-div">
-            <button class="prominent">NEW</button>
+      <div>
+            <button class="prominent" id="add-driver-btn">ADD New Driver</button>
             <div>
             
                <input type="search" name="" id="" placeholder="search for person">
@@ -30,23 +30,29 @@
       <td>{{lastName}}</td>
       <td>{{phone}}</td>
       <td>{{email}}</td>
+      <td>{{vehicle.model}}</td>
 
-      <td>
+      {{!-- <td>
         <select name="vehicle" id="vehicle">
-          {{#each vehicleData}}
+          {{#each ../vehicleData}}
            
            <option value="{{_id}}">
-            {{_id}}
+            {{license}}-
+            {{model}}
            </option>
            {{/each}}  
         </select>
-      </td>
+      </td> --}}
 
-      <td class=""><button class="secondary-btn">EDIT</button></td>
-      <td class="btn-table"><button class="secondary-btn">DELETE</button></td>
+      <td><button class="secondary-btn">
+        <a href="/employee/edit/{{_id}}">EDIT</a>
+        </button></td>
+      <td><button class="secondary-btn">
+        <a href="/employee/edit/{{_id}}"></a>
+        DELETE</button></td>
     </tr>
 
-  {{/each}}
+  {{/each}}  
 
   </table>
   </div>
@@ -71,3 +77,51 @@
 
     <button class="signup-btn" type="submit">Sign Up</button>
 
+
+
+
+<div id="add-driver"  style="display:none" >
+<form action="/employee" method="POST">
+
+	 <label for="">Username: </label>
+	 <input type="text" name="username">
+
+	 <label for="">Password: </label>
+	 <input type="password" name="password">
+
+    <label for="">Name: </label>
+    <input type="text" name="name">
+
+    <label for="">LastName: </label>
+    <input type="text" name="lastName">
+
+    <label for="">Street: </label>
+    <input type="text" name="street">
+
+    <label for="">Email: </label>
+    <input type="text" name="email">
+
+    <label for="">Phone: </label>
+    <input type="numbder" name="phone">
+
+    <button type="submit">ADD</button>
+
+    	{{#if message}}
+		<h3>{{message}}</h3>
+	{{/if}}s
+
+</form>
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+ 
+<script src="/js/script.js"></script>

@@ -11,12 +11,8 @@ const vehicleSchema = new Schema(
         model: String,
         color: String,
         license: String,
-        status: {
-            type: String,
-            enum: ['Available', 'Unavailable', 'Pending'],
-            required: true
-        }
-    }
+        available: Boolean    
+    }   
 );
 
 const Vehicle = model("Vehicle", vehicleSchema);

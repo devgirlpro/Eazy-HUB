@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="/stylesheets/style.css" />
+
+ <section class="employee-section">
+      <div>
+            <button class="prominent" id="add-driver-btn">NewDriver</button>
+            <div>
+              <img class="search-img" src="/images/search.svg" alt="">
+               <input type="search" name="" id="" placeholder="search for person">
+               <button>search</button>
+            </div>
+      </div>
+
+
+   
+<div style="overflow-x:auto;">
+   <form action="/employee/edit/{{userId}}" method="POST">
+  <table>
+    <tr>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Phone</th>
+      <th>E-mail</th>      
+      <th>Vehicle</th>
+    
+    </tr>
+
+  
+
+{{#each userData}}
+  {{#if selected}}
+ 
+<tr>
+  <td>
+<input type="text" name="username" value="{{username}}">
+</td>
+<td><input type="text" name="name" value="{{name}}"></td>
+<td><input type="text" name="lastName" value="{{lastName}}"></td>
+<td><input type="numbder" name="phone" value="{{phone}}"></td>
+<td><input type="text" name="email" value="{{email}}"></td>
+<td>
+   <select name="vehicle" id="vehicle">
+          {{#each ../vehicleData}}
+           
+           <option value="{{_id}}">
+            {{license}}-
+            {{model}}
+           </option>
+           {{/each}}  
+        </select>
+</td>
+<td><button type="submit">Save Changes</button></td>
+</tr>
+	
+    {{/if}}
+    <tr>
+      <td>{{username}}</td>
+      <td>{{name}}</td>
+      <td>{{lastName}}</td>
+      <td>{{phone}}</td>
+      <td>{{email}}</td>
+      <td>{{vehicle.license}}</td>
+
+      {{!-- <td>
+     
+      </td> --}}
+
+      {{!-- <td><button class="secondary-btn">EDIT</button></td> --}}
+      <td><button class="secondary-btn"><a href="/employee/edit/{{_id}}"></a>DELETE</button></td>
+    </tr>
+
+  {{/each}}
+
+   
+
+  </table>
+  </form>
+  </div>
+  </section>
