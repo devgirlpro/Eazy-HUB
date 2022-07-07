@@ -9,7 +9,7 @@ const Vehicle = require("../models/Vehicle");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  res.render("index", {layout: false});
 });
  
 router.get("/employee/delete/:userId", (req, res, next) => {
@@ -134,13 +134,11 @@ let user = {
   phone, 
   email
 }
-
 // User.find()
 // .then(userFromDB => {
 //   if(vehicle)
 // })
 // .catch()
-
 
 if(vehicle) {
   user.available = false;
@@ -150,19 +148,12 @@ if(vehicle) {
    vehicleFromDB.available = false;
    vehicleFromDB.save()
   })
-// console.log("VEHICLE ==>>", vehicle)
 
-}else {
+} else {
   user.available = true;
   user.$unset = {vehicle: 1};
-  // user.vehicle = vehicle;
-  // Vehicle.findById(vehicle)
-  // .then(vehicleFromDB => {
-  //  vehicleFromDB.available = true;
-  //  vehicleFromDB.save()
 }
-// )}
-  // console.log("req.body.vehicle =>", req.body.vehic)
+
   User.findByIdAndUpdate(userId, user)
   .then(user => {
     res.redirect("/employee")
@@ -177,19 +168,14 @@ if(vehicle) {
    .catch(error => console.log(error))  
 });
 
-
-
 /* GET vehicle page */
 //access to the vehicles from db
 router.get("/vehicle", (req, res, next) => {
     Vehicle.find()
     .then((vehicleData) => {
-      // console.log()
       res.render("vehicle", {vehicleData})
     })
     .catch(error => console.log(error))
-
-  // res.render("vehicle");
 });
 
 

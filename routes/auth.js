@@ -3,7 +3,7 @@ const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 
 router.get("/signup", (req, res, next) => {
-	res.render("signup");
+	res.render("signup", {layout: false});
 });
 
 
@@ -13,12 +13,12 @@ router.post('/signup', (req, res, next) => {
 	console.log("req.body =>", req.body)
 	// validation
 	if (password.length < 4) {
-		res.render('signup', { message: 'Password has to be 4 chars min' })
+		res.render('signup', {layout: false}, { message: 'Password has to be 4 chars min' })
 		return
 	}
 	// check if username is not empty
 	if (username === '') {
-		res.render('signup', { message: 'Username cannot be empty' })
+		res.render('signup', {layout: false}, { message: 'Username cannot be empty' })
 		return
 	}	
 	
@@ -28,7 +28,7 @@ router.post('/signup', (req, res, next) => {
 		.then(userFromDB => {
 			// if there is a user
 			if (userFromDB !== null) {
-				res.render('signup', { message: 'Your username is already taken' })
+				res.render('signup', {layout: false}, { message: 'Your username is already taken' })
 				return
 			} else {
 				// we can use that username
@@ -52,7 +52,7 @@ router.post('/signup', (req, res, next) => {
 
 
 router.get("/login", (req, res, next) => {
-	res.render("login");
+	res.render("login", {layout: false});
 });
 
 
