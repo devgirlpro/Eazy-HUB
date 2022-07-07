@@ -39,6 +39,8 @@
 <td><input type="text" name="email" value="{{email}}"></td>
 <td>
    <select name="vehicle" id="vehicle">
+     <option value></option>
+     <option value="{{userData.vehicle}}" selected></option>
           {{#each ../vehicleData}}
            
            <option value="{{_id}}">
