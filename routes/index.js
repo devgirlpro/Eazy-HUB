@@ -11,7 +11,13 @@ const Vehicle = require("../models/Vehicle");
 router.get("/", (req, res, next) => {
   res.render("index");
 });
-
+ 
+router.get("/employee/delete/:userId", (req, res, next) => {
+  User.findByIdAndRemove({_id: req.params.userId})
+    .then(() => res.redirect("/employee"))
+    .catch(error => console.log(error))
+  
+})
 
 /* GET manager page */
 router.get("/manager", (req, res, next) => {
@@ -26,7 +32,7 @@ router.get("/employee/edit/:userId", (req, res) => {
   //"vehicle" => it's refer to the vehicle in user scema
    .populate("vehicle")
    .then(userData => {
-    Vehicle.find()
+    Vehicle.find({available: true})
       .then((vehicleData) => {
         userData.map(user => {
           if(user._id == userId) {
@@ -34,6 +40,7 @@ router.get("/employee/edit/:userId", (req, res) => {
           }else {user.selected = false}
           return user
         })
+        console.log(userData)
         res.render("edit", {userData, vehicleData, userId})
       })
    })
@@ -104,25 +111,13 @@ router.post('/employee', (req, res, next) => {
 
 
 //get employee delete page
-// router.get("/employee/delete/:userId", (req, res) => {
-//   const userId = req.params.userId
-//   User.find()
-  //"vehicle" => it's refer to the vehicle in user scema
-  //  .populate("vehicle")
-//    .then(userData => {
-//     Vehicle.find()
-//       .then((vehicleData) => {
-//         userData.map(user => {
-//           if(user._id == userId) {
-//             user.selected = true
-//           }else {user.selected = false}
-//           return user
-//         })
-//         res.render("edit", {userData, vehicleData, userId})
-//       })
-//    })
-//    .catch(error => console.log(error)) 
-// }) 
+// router.post("/employee/:userId/delete", (req, res) => {
+//   User.findByIdAndRemove({_id: req.params.userId})
+//     .then(() => res.sendStatus(204))
+//     .catch(error => console.log(error))
+// });
+  // "vehicle" => it's refer to the vehicle in user scema
+ 
 
 
 
@@ -140,7 +135,11 @@ let user = {
   email
 }
 
-
+// User.find()
+// .then(userFromDB => {
+//   if(vehicle)
+// })
+// .catch()
 
 
 if(vehicle) {
@@ -156,12 +155,13 @@ if(vehicle) {
 }else {
   user.available = true;
   user.$unset = {vehicle: 1};
-  user.vehicle = vehicle;
-  Vehicle.findById(vehicle)
-  .then(vehicleFromDB => {
-   vehicleFromDB.available = true;
-   vehicleFromDB.save()
-})}
+  // user.vehicle = vehicle;
+  // Vehicle.findById(vehicle)
+  // .then(vehicleFromDB => {
+  //  vehicleFromDB.available = true;
+  //  vehicleFromDB.save()
+}
+// )}
   // console.log("req.body.vehicle =>", req.body.vehic)
   User.findByIdAndUpdate(userId, user)
   .then(user => {
