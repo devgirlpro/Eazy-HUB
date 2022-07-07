@@ -3,17 +3,15 @@
   <div class="employee-header">
     <button class="prominent" id="add-driver-btn">ADD New Driver</button>
     <div>
-
-      <input type="search" name="" id="" placeholder=" search for person" />
-      
-      <button class="td-btn">
-              <a href="/search"> <i class="fa fa-search" style="font-size:25px"></i> </a>
-              </button>
+      <input type="search" name="" id="" placeholder=" search for person" /> 
+      <button class="btn-search">
+        <a href="/search"> <i class="fa fa-search" style="font-size:25px"></i> search</a>
+      </button>
     </div>
   </div>
   <hr />
-  <div style="overflow-x:auto;">
-    <table>
+  <div class="table-div" style="overflow-x:auto;">
+    <table cellspacing="0">
       <tr>
         <th>Username</th>
         <th>Name</th>
@@ -45,10 +43,10 @@
         </select>
       </td> --}}
 
-          <td><button class="td-btn">
+          <td class="icon-td"><button class="td-btn">
               <a href="/employee/edit/{{_id}}"><i class="fa fa-edit" style="font-size:25px"></i></a>
             </button></td>
-          <td><button class="td-btn">
+          <td class="icon-td"><button class="td-btn">
               <a href="/employee/edit/{{_id}}"> <i class="fa fa-trash" style="font-size:25px"></i> </a>
               </button></td>
         </tr>
@@ -70,7 +68,7 @@
         <input type="text" name="email" placeholder="E-Mail"/>
 
       </tr>
-<button type="submit" class="td-btn">Add</button>
+<button type="submit" class="btn-secondary">Add</button>
 
       {{#if message}}
         <h3>{{message}}</h3>
