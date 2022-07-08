@@ -1,20 +1,42 @@
 <link rel="stylesheet" href="/stylesheets/style.css" />
-
-
-<ul>
-    <li><h2>manager Access Page</h2></li>
-    <li><h2>avalables drivers</h2></li>
-    <li><h2>avalables vehicles</h2></li>
-</ul>
-
-
-
-
-
-{{#each userData}}
-<ul>
-    <li>{{name}}</li>
-    <li>{{email}}</li>
-    <li>{{phone}}</li>
-</ul>
+<h2>Manager Access Only</h2>
+<h2>Available Drivers</h2>
+ <section class="employee-section">
+   <div style="overflow-x:auto;">
+    <table>
+      <tr>
+         <th>Username</th>
+         <th>E-mail</th>
+         <th>Phone</th>
+      </tr>
+    {{#each availableDriver}}
+<tr>
+    <td>{{name}}</td>
+    <td>{{email}}</td>
+    <td>{{phone}}</td>
+</tr>
 {{/each}}
+</table>
+</div>
+</section>
+<h2>Available Vehicles</h2>
+ <section class="employee-section">
+   <div style="overflow-x:auto;">
+      <table>
+      <tr>
+         <th>Braand</th>
+         <th>Model</th>
+         <th>License</th>
+      </tr>
+    {{#each availableVehicle}}
+<tr>
+    <td>{{brand}}</td>
+    <td>{{ model}}</td>
+    <td>{{license}}</td>
+</tr>
+{{/each}}
+</table>
+</div>
+</section>
+<button class="secondary-btn"><a href="/">HOME Page</a></button>
+<button class="secondary-btn"><a href="/employee/">DASHBOARD</a></button>
