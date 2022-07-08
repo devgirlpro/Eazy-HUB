@@ -5,7 +5,7 @@ const Vehicle = require("../models/Vehicle");
 // const Damage = require("../models/dammage")
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  res.render("index",{layout: false});
 });
 //get manager page
 // router.get("/manager", (req,res) => {
@@ -61,7 +61,7 @@ router.post('/employee', (req, res, next) => {
   }
   // check if username is not empty
   if (username === '') {
-    res.render('signup', { message: 'Username cannot be empty' })
+    res.render('signup',{layout: false} , { message: 'Username cannot be empty' })
     return
   }
   // validation passed
@@ -70,7 +70,7 @@ router.post('/employee', (req, res, next) => {
     .then(userFromDB => {
       // if there is a user
       if (userFromDB !== null) {
-        res.render('signup', { message: 'Your username is already taken' })
+        res.render('signup',{layout: false}, { message: 'Your username is already taken' })
         return
       } else {
         // we can use that username
